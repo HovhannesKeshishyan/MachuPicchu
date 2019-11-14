@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/MachuPicchu/static/css/main.545f77c8.chunk.css",
+    "main.js": "/MachuPicchu/static/js/main.96df206c.chunk.js",
+    "main.js.map": "/MachuPicchu/static/js/main.96df206c.chunk.js.map",
+    "runtime-main.js": "/MachuPicchu/static/js/runtime-main.b03553ca.js",
+    "runtime-main.js.map": "/MachuPicchu/static/js/runtime-main.b03553ca.js.map",
+    "static/js/2.05a4e089.chunk.js": "/MachuPicchu/static/js/2.05a4e089.chunk.js",
+    "static/js/2.05a4e089.chunk.js.map": "/MachuPicchu/static/js/2.05a4e089.chunk.js.map",
+    "index.html": "/MachuPicchu/index.html",
+    "precache-manifest.3775e2a747ba3c6970e896a14461a70c.js": "/MachuPicchu/precache-manifest.3775e2a747ba3c6970e896a14461a70c.js",
+    "service-worker.js": "/MachuPicchu/service-worker.js",
+    "static/css/main.545f77c8.chunk.css.map": "/MachuPicchu/static/css/main.545f77c8.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b03553ca.js",
+    "static/js/2.05a4e089.chunk.js",
+    "static/css/main.545f77c8.chunk.css",
+    "static/js/main.96df206c.chunk.js"
+  ]
+}
