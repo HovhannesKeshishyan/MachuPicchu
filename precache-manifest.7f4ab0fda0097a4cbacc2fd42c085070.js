@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fcf3e2a88cdf7bdd8d10d7c75f71802d",
+    "revision": "ce95096ec5a037310442f905a0d5514d",
     "url": "/MachuPicchu/index.html"
   },
   {
-    "revision": "375c4e8a5eee74785e04",
-    "url": "/MachuPicchu/static/css/main.545f77c8.chunk.css"
+    "revision": "f6db2067686059bec50c",
+    "url": "/MachuPicchu/static/css/main.15a48ea8.chunk.css"
   },
   {
     "revision": "5db9287fac7919143a93",
     "url": "/MachuPicchu/static/js/2.05a4e089.chunk.js"
   },
   {
-    "revision": "375c4e8a5eee74785e04",
-    "url": "/MachuPicchu/static/js/main.96df206c.chunk.js"
+    "revision": "f6db2067686059bec50c",
+    "url": "/MachuPicchu/static/js/main.d0447f27.chunk.js"
   },
   {
     "revision": "23cd71ee8f1347d64670",
