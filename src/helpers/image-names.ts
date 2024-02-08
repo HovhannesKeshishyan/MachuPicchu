@@ -1,0 +1,17 @@
+export const IMAGE_NAMES = [
+  "car.png",
+  "elephant.png",
+  "flag.png",
+  "gold-fish.png",
+  "minion.png",
+  "ninja.png",
+  "palm.png",
+  "panda.png",
+  "shark.png",
+  "ship.png",
+  "phone.png",
+  "thread.png",
+  "truck.png",
+  "whell.png",
+  "white-blue-fish.png",
+];
