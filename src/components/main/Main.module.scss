@@ -1,3 +1,9 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .main {
   display: grid;
   width: 100%;
@@ -15,37 +21,37 @@
   }
 
   .grid_item {
-    display: flex;
+    @include flex-center;
+    position: relative;
     border: 2px solid pink;
     background: silver;
-    justify-content: center;
-    align-items: center;
     font-size: 4rem;
     color: grey;
+    cursor: pointer;
     user-select: none;
 
-    &::before {
-      content: "?";
+    .image_shape {
+      @include flex-center;
       position: absolute;
       color: #485ca1;
     }
-  }
 
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    z-index: 100;
-    background: silver;
-    /* transition: opacity 1s linear; */
-  }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      z-index: 100;
+      background: silver;
+      display: none;
+    }
 
-  .hidden {
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  .show {
-    opacity: 1;
-    cursor: default;
+    &.show {
+      cursor: default;
+      .image_shape {
+        display: none;
+      }
+      img {
+        display: block;
+      }
+    }
   }
 }

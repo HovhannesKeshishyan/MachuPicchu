@@ -75,18 +75,18 @@ const Main: FC = () => {
       )}
 
       <div className={main_class_name}>
-        {currentGameImages.map(function (image) {
+        {currentGameImages.map((image) => {
           const class_name = openedImages[image.id]
-            ? `${styles.hidden} ${styles.show}`
-            : styles.hidden;
+            ? `${styles.grid_item} ${styles.show}`
+            : styles.grid_item;
           return (
-            <div key={image.id} className={styles.grid_item}>
-              <img
-                src={image.path}
-                alt={image.name}
-                className={class_name}
-                onClick={() => handleClick(image)}
-              />
+            <div
+              onClick={() => handleClick(image)}
+              className={class_name}
+              key={image.id}
+            >
+              <div className={styles.image_shape}>?</div>
+              <img src={image.path} alt={image.name} />
             </div>
           );
         })}
