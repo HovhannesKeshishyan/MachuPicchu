@@ -2,33 +2,21 @@ import { FC, useState } from "react";
 import styles from "./Main.module.scss";
 
 import type { ImageState, OpenedImages } from "@/types/types";
-import { IMAGE_NAMES } from "@/helpers/image-names";
+import { getCurrentImages } from "@/helpers/image-names";
 import { WinnerModal } from "../modals/WinnerModal";
 
-//dublicate and shuffle
-const image_names = [...IMAGE_NAMES, ...IMAGE_NAMES].sort(() => {
-  return Math.random() - 0.5;
-});
-
-const images: ImageState[] = image_names.map(
-  (image_name, index): ImageState => {
-    return {
-      id: index,
-      name: image_name,
-      path: `images/${image_name}`,
-      is_open: false,
-    };
-  }
-);
+const CURRENT_GAME_IMAGES = getCurrentImages();
 
 const Main: FC = () => {
+  const [currentGameImages, setCurrentGameImages] =
+    useState(CURRENT_GAME_IMAGES);
   const [firstImage, setFirstImage] = useState<ImageState | null>(null);
   const [findedImages, setFindedImages] = useState<number[]>([]);
   const [openedImages, setOpenedImages] = useState<OpenedImages>({});
   const [attempths, setAttempths] = useState(0);
   const [clickDisabled, setClickDisabled] = useState(false);
 
-  const winner = findedImages.length === images.length;
+  const winner = findedImages.length === CURRENT_GAME_IMAGES.length;
 
   const handleClick = (clicked_image: ImageState) => {
     const { id, name } = clicked_image;
@@ -63,6 +51,10 @@ const Main: FC = () => {
     }, 1500);
   };
 
+  const restartGame = () => {
+    setCurrentGameImages(getCurrentImages());
+  };
+
   const main_class_name = clickDisabled
     ? `${styles.main} ${styles.main_click_disabled}`
     : styles.main;
@@ -72,12 +64,13 @@ const Main: FC = () => {
         <WinnerModal
           message={`You find all pictures after ${attempths} attempths`}
           hide_cancel_btn
+          onConfirm={restartGame}
           ok_btn_text="Play again?"
         />
       )}
 
       <div className={main_class_name}>
-        {images.map(function (image) {
+        {currentGameImages.map(function (image) {
           const class_name = openedImages[image.id]
             ? `${styles.hidden} ${styles.show}`
             : styles.hidden;
