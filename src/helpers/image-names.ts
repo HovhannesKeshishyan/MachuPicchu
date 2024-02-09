@@ -34,9 +34,9 @@ const getRandomImages = (count = 15) => {
   const shuffled = shuffleArray(arr);
   //get random items
   let slice = shuffled.slice(0, count);
-  //dublicate items
+  //duplicate items
   slice = [...slice, ...slice];
-  //shuffle dublicates
+  //shuffle duplicates
   return shuffleArray(slice);
 };
 
