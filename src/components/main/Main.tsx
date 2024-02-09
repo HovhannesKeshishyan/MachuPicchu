@@ -3,6 +3,7 @@ import styles from "./Main.module.scss";
 
 import type { ImageState, OpenedImages } from "@/types/types";
 import { IMAGE_NAMES } from "@/helpers/image-names";
+import { WinnerModal } from "../modals/WinnerModal";
 
 //dublicate and shuffle
 const image_names = [...IMAGE_NAMES, ...IMAGE_NAMES].sort(() => {
@@ -26,6 +27,8 @@ const Main: FC = () => {
   const [openedImages, setOpenedImages] = useState<OpenedImages>({});
   const [attempths, setAttempths] = useState(0);
   const [clickDisabled, setClickDisabled] = useState(false);
+
+  const winner = findedImages.length === images.length;
 
   const handleClick = (clicked_image: ImageState) => {
     const { id, name } = clicked_image;
@@ -65,6 +68,14 @@ const Main: FC = () => {
     : styles.main;
   return (
     <>
+      {winner && (
+        <WinnerModal
+          message={`You find all pictures after ${attempths} attempths`}
+          hide_cancel_btn
+          ok_btn_text="Play again?"
+        />
+      )}
+
       <div className={main_class_name}>
         {images.map(function (image) {
           const class_name = openedImages[image.id]
