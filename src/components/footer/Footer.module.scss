@@ -1,6 +1,7 @@
 .footer {
   display: flex;
   width: 100%;
+  min-height: 100px;
   background-color: rgb(54, 52, 52);
   align-items: center;
 
@@ -9,7 +10,7 @@
     display: grid;
     justify-content: space-around;
     align-items: center;
-    grid-template-columns: repeat(4, 1fr);    
+    grid-template-columns: repeat(4, 1fr);
     color: rgb(4, 159, 231);
 
     li {
@@ -27,6 +28,17 @@
           animation: heart-beat 0.5s ease-in-out infinite;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
     }
   }
 }

@@ -74,7 +74,7 @@ const Main: FC = () => {
         />
       )}
 
-      <div className={main_class_name}>
+      <main className={main_class_name}>
         {currentGameImages.map((image) => {
           const class_name = openedImages[image.id]
             ? `${styles.grid_item} ${styles.show}`
@@ -90,7 +90,7 @@ const Main: FC = () => {
             </div>
           );
         })}
-      </div>
+      </main>
     </>
   );
 };
