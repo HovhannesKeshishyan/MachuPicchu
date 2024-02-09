@@ -58,7 +58,7 @@
 
 @media screen and (max-width: 800px) {
   .main {
-    width: 95vw;
+    width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     grid-auto-rows: 100px;
   }
