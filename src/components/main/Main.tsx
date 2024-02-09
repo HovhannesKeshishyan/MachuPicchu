@@ -53,6 +53,11 @@ const Main: FC = () => {
 
   const restartGame = () => {
     setCurrentGameImages(getCurrentImages());
+    setFirstImage(null);
+    setFindedImages([]);
+    setOpenedImages({});
+    setAttempths(0);
+    setClickDisabled(false);
   };
 
   const main_class_name = clickDisabled
