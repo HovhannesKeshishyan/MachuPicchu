@@ -9,6 +9,11 @@
   justify-content: center;
   align-content: space-around;
 
+  &.main_click_disabled {
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
   .grid_item {
     display: flex;
     border: 2px solid pink;
@@ -17,6 +22,7 @@
     align-items: center;
     font-size: 4rem;
     color: grey;
+    user-select: none;
 
     &::before {
       content: "?";
@@ -35,9 +41,11 @@
 
   .hidden {
     opacity: 0;
+    cursor: pointer;
   }
 
   .show {
     opacity: 1;
+    cursor: default;
   }
 }

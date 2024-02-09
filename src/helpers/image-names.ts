@@ -1,4 +1,6 @@
-export const IMAGE_NAMES = [
+import type { ImageNames } from "@/types/types";
+
+export const IMAGE_NAMES: ImageNames = [
   "car.png",
   "elephant.png",
   "flag.png",
@@ -9,7 +11,7 @@ export const IMAGE_NAMES = [
   "panda.png",
   "shark.png",
   "ship.png",
-  "phone.png",
+  "tomato.png",
   "thread.png",
   "truck.png",
   "whell.png",
