@@ -10,3 +10,9 @@ export interface ImageState {
 export interface OpenedImages {
   [key: string]: boolean;
 }
+
+export interface SocialMedia {
+  name: string;
+  href: string;
+  icon: string;
+}
