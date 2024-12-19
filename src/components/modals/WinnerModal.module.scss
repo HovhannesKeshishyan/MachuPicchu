@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $ok_btn_bg: #047cb2;
 $cancel_btn_bg: #c23b3b;
 
@@ -80,13 +82,13 @@ $cancel_btn_bg: #c23b3b;
         &.ok_btn {
           background-color: $ok_btn_bg;
           &:hover {
-            background-color: darken($ok_btn_bg, 10%);
+            background-color: color.adjust($ok_btn_bg, $lightness: -10%);
           }
         }
         &.cancel_btn {
           background-color: $cancel_btn_bg;
           &:hover {
-            background-color: darken($cancel_btn_bg, 10%);
+            background-color: color.adjust($cancel_btn_bg, $lightness: -10%);
           }
         }
       }
