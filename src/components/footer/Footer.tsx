@@ -14,7 +14,7 @@ const social_medias: SocialMedia[] = [
   },
   {
     name: "Github",
-    href: "https://github.com/Hovhannes1991",
+    href: "https://github.com/HovhannesKeshishyan",
     icon: GithubIcon,
   },
   {

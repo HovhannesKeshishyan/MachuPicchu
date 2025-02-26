@@ -40,4 +40,4 @@ npm run build
 
 ### Github URL
 
-[https://github.com/Hovhannes1991/MachuPicchu](https://github.com/Hovhannes1991/MachuPicchu).
+[https://github.com/HovhannesKeshishyan/MachuPicchu](https://github.com/HovhannesKeshishyan/MachuPicchu).
