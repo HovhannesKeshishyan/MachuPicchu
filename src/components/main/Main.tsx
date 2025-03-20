@@ -11,12 +11,12 @@ const Main: FC = () => {
   const [currentGameImages, setCurrentGameImages] =
     useState(CURRENT_GAME_IMAGES);
   const [firstImage, setFirstImage] = useState<ImageState | null>(null);
-  const [findedImages, setFindedImages] = useState<number[]>([]);
+  const [foundImages, setFoundImages] = useState<number[]>([]);
   const [openedImages, setOpenedImages] = useState<OpenedImages>({});
-  const [attempths, setAttempths] = useState(0);
+  const [attempts, setAttempts] = useState(0);
   const [clickDisabled, setClickDisabled] = useState(false);
 
-  const winner = findedImages.length === CURRENT_GAME_IMAGES.length;
+  const winner = foundImages.length === CURRENT_GAME_IMAGES.length;
 
   const handleClick = (clicked_image: ImageState) => {
     const { id, name } = clicked_image;
@@ -33,11 +33,11 @@ const Main: FC = () => {
       return;
     }
 
-    setAttempths((prev) => prev + 1);
+    setAttempts((prev) => prev + 1);
 
     if (firstImage.name === name) {
       setFirstImage(null);
-      setFindedImages((prev_state) => [...prev_state, firstImage.id, id]);
+      setFoundImages((prev_state) => [...prev_state, firstImage.id, id]);
       return;
     }
 
@@ -54,9 +54,9 @@ const Main: FC = () => {
   const restartGame = () => {
     setCurrentGameImages(getCurrentImages());
     setFirstImage(null);
-    setFindedImages([]);
+    setFoundImages([]);
     setOpenedImages({});
-    setAttempths(0);
+    setAttempts(0);
     setClickDisabled(false);
   };
 
@@ -67,7 +67,7 @@ const Main: FC = () => {
     <>
       {winner && (
         <WinnerModal
-          message={`You find all pictures after ${attempths} attempths`}
+          message={`You find all pictures after ${attempts} attempts`}
           hide_cancel_btn
           onConfirm={restartGame}
           ok_btn_text="Play again?"
