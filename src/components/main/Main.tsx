@@ -86,7 +86,7 @@ const Main: FC = () => {
               key={image.id}
             >
               <div className={styles.image_shape}>?</div>
-              <img src={image.path} alt={image.name} />
+              <img src={image.path} alt={image.altText} />
             </div>
           );
         })}
